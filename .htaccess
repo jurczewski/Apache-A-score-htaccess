@@ -3,10 +3,12 @@
 # General rules
 Options -Indexes
 RewriteEngine On
+
 # SmartLinks (no .html)
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^([^\.]+)$ $1.html [NC,L]
+
 # HTTPS and no www
 RewriteCond %{HTTPS} off [OR]
 RewriteCond %{HTTP_HOST} ^www\. [NC]
@@ -14,7 +16,7 @@ RewriteRule ^ https://bambit.com.pl/%{REQUEST_URI} [L,NE,R=301]
 
 # SECURITY
 <IfModule mod_headers.c>
-	Header set Content-Security-Policy "default-src 'self'; connect-src *; font-src *; frame-src *; img-src * data:; media-src *; object-src *; script-src * 'unsafe-inline' 'unsafe-eval'; style-src * 'unsafe-inline'; script-src-elem * 'unsafe-inline';"
+    Header set Content-Security-Policy "default-src 'self'; connect-src *; font-src *; frame-src *; img-src * data:; media-src *; object-src *; script-src * 'unsafe-inline' 'unsafe-eval'; style-src * 'unsafe-inline'; script-src-elem * 'unsafe-inline';"
 
     Header always set X-Content-Type-Options "nosniff"
 
