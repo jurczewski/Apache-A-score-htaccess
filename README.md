@@ -17,7 +17,7 @@ https://securityheaders.com/?q=rondofitness.pl&followRedirects=on
 # General
 | Rule | Description |
 |-----------------------------------------------------------------|-------------|
-| Options -Indexes |  |
+| Options -Indexes | Defaultly enabled: Users can browse inside directory that doesn't have a index file (.html, .php, etc.). Turning it off, prevents from listing files of directories. |
 | RewriteEngine On |  |
 | RewriteCond %{REQUEST_FILENAME} !-d |  |
 | RewriteCond %{REQUEST_FILENAME} !-f |  |
