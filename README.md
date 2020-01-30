@@ -1,5 +1,5 @@
-# Apache server configuration file .htaccess with A score in security
-A model '.htacces' file with score A on Security Report (from securityheaders.com)
+# Apache-A-score-htaccess
+Apache server configuration file .htaccess with A score in security on Security Report (from securityheaders.com).
 
 # What does this file include?
 - Safety Headers that guarantee your website a score A in a Security Report Summary
