@@ -1,4 +1,4 @@
-# model-A-score-htaccess
+# Apache server configuration file .htaccess with A score in security
 A model '.htacces' file with score A on Security Report (from securityheaders.com)
 
 # What does this file include?
