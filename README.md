@@ -37,7 +37,7 @@ Following example is a generated report from a website with a proper .htacces:<b
 | __Referrer-Policy__ |  |
 | __Feature-Policy__ |  |
 <br>
-Information taken from [securityheaders.com](https://securityheaders.com)
+Information taken from https://securityheaders.com.
 
 # Score A+
 The delivered file achieves only A score. Hence, how to score A+, the highest possible mark?<br>
