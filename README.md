@@ -21,7 +21,7 @@ Following example is a generated report from a website with a proper .htacces:<b
 | RewriteEngine On | Turns rewrite engine on - enables to write your own rules. |
 | RewriteCond %{REQUEST_FILENAME} !-d | Rule condition 1, requested URL is not a directory |
 | RewriteCond %{REQUEST_FILENAME} !-f | Rule condition 2, requested URL is not a file |
-| RewriteRule ^([^\.]+)$ $1.html [NC,L] | If both conditions are passed (1 & 2), "Smart link" works. Request to bambit.com.pl/<name> will be identical to bambit.com.pl/<name.html>. <BR>Both URLs works, but user has not to enter full URL. |
+| RewriteRule ^([^\.]+)$ $1.html [NC,L] | If both conditions are passed (1 & 2), "Smart link" works. Request to bambit.com.pl/[name] will be identical to bambit.com.pl/[name].html. <BR>Both URLs works, but user has not to enter full URL. |
 | RewriteCond %{HTTPS} off [OR]<br> RewriteCond %{HTTP_HOST} ^www\. [NC] | Automatically redirects request to HTTPS. E.g URL http://bambit.com.pl, will be changed to https://bambit.com.pl. |
 | RewriteRule ^ https://bambit.com.pl/%{REQUEST_URI} [L,NE,R=301] | Domain prefix 'www' will be remove. E.g URL https://www.bambit.com.pl will be changed to https://bambit.com.pl |
 
