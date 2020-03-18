@@ -30,12 +30,12 @@ Following example is a generated report from a website with a proper .htacces:<b
 | __Header name__ | Description |
 |---------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | __Content-Security-Policy__ | Content Security Policy is an effective measure to protect your site from XSS attacks. By whitelisting sources of approved content, you can prevent the browser from loading malicious assets. Analyse this policy in more detail. You can sign up for a free account on Report URI to collect reports about problems on your site. |
-| __X-Content-Type-Options__ |  |
-| __X-FRAME-OPTIONS__ |  |
-| __X-XSS-Protection__ |  |
-| __Strict-Transport-Security__ |  |
-| __Referrer-Policy__ |  |
-| __Feature-Policy__ |  |
+| __X-Content-Type-Options__ | X-Content-Type-Options stops a browser from trying to MIME-sniff the content type and forces it to stick with the declared content-type. The only valid value for this header is "X-Content-Type-Options: nosniff". |
+| __X-FRAME-OPTIONS__ | X-Frame-Options tells the browser whether you want to allow your site to be framed or not. By preventing a browser from framing your site you can defend against attacks like clickjacking. |
+| __X-XSS-Protection__ | X-XSS-Protection sets the configuration for the XSS Auditor built into older browser. The recommended value was "X-XSS-Protection: 1; mode=block" but you should now look at Content Security Policy instead. |
+| __Strict-Transport-Security__ | HTTP Strict Transport Security is an excellent feature to support on your site and strengthens your implementation of TLS by getting the User Agent to enforce the use of HTTPS. |
+| __Referrer-Policy__ | 	Referrer Policy is a new header that allows a site to control how much information the browser includes with navigations away from a document and should be set by all sites. |
+| __Feature-Policy__ | Feature Policy is a new header that allows a site to control which features and APIs can be used in the browser. |
 <br>
 Information taken from https://securityheaders.com.
 
