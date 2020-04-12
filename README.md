@@ -1,5 +1,5 @@
 # Apache-A-score-htaccess
-Apache server configuration file .htaccess with __A+ score__ in security on [Security Report](securityheaders.com).
+Apache server configuration file .htaccess with __A+ score__ in security on [Security Report](https://securityheaders.com).
 
 # What does this file include?
 - Safety Headers that guarantee your website a score __A+__ in a Security Report Summary
