@@ -30,9 +30,6 @@ RewriteRule ^ https://bambit.com.pl/%{REQUEST_URI} [L,NE,R=301]
 
     Header set Referrer-Policy "no-referrer"
 
-    Header set Feature-Policy: "microphone 'none'; \
-                                camera 'none'; \
-                                payment 'none'; \
-                                geolocation 'self'"
+    Header set Permissions-Policy: microphone=(), camera=(), payment=(), geolocation=(self)
 
 </IfModule>
