@@ -39,8 +39,6 @@ ErrorDocument 404 /404.html
 
     Header always set Strict-Transport-Security "max-age=63072000; includeSubDomains; preload"
 
-    Header set Cross-Origin-Embedder-Policy "require-corp"
-
     Header set Cross-Origin-Resource-Policy "same-origin"
 
 </IfModule>
