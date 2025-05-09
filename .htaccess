@@ -45,3 +45,10 @@ ErrorDocument 404 /404.html
 
 </IfModule>
 
+<IfModule mod_expires.c>
+  ExpiresActive On
+  <FilesMatch "\.(jpg|jpeg|png|gif|webp|svg|js|css|woff2?|ttf|eot|ico|pdf|avif)$">
+    ExpiresDefault "access plus 1 year"
+    Header set Cache-Control "max-age=31536000, public"
+  </FilesMatch>
+</IfModule>
