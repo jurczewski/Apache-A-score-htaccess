@@ -14,8 +14,9 @@ All explained bellow.
 
 ### Example
 
-Following example is a generated report from a website with a proper .htacces:<br>
-[securityheaders.com/bambit](https://securityheaders.com/?q=bambit.com.pl&followRedirects=on)
+Following example is a generated report from a website with a proper .htacces:
+
+[securityheaders.com/bambit.com.pl](https://securityheaders.com/?q=bambit.com.pl&followRedirects=on)
 
 ## General
 
