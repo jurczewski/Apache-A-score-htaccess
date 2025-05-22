@@ -4,41 +4,43 @@
 Options -Indexes
 RewriteEngine On
 
-# SmartLinks (no .html)
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteRule ^([^\.]+)$ $1.html [NC,L]
+# SmartLinks (no .php)
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^(.+?)/?$ $1.php [NC,L]
 
-# HTTPS and no www
-RewriteCond %{HTTPS} off [OR]
+# Force HTTPS
+RewriteCond %{HTTPS} off
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Remove www
 RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
 RewriteRule ^ https://%1%{REQUEST_URI} [L,R=301]
 
-# 404 page for seo
-ErrorDocument 404 /404.html
+# 404 page for SEO
+ErrorDocument 404 /404.php
+
+# Remove index.php from URLs
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /.*index\.php
+RewriteRule ^(.*)index\.php$ /$1 [R=301,L]
+
+# Handle requests for index.php internally
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php [QSA,L]
 
 # SECURITY
 <IfModule mod_headers.c>
     Header set Content-Security-Policy "default-src 'self'; connect-src *; font-src *; frame-src *; img-src * data:; media-src *; object-src *; script-src * 'unsafe-inline' 'unsafe-eval'; style-src * 'unsafe-inline'; script-src-elem * 'unsafe-inline';"
 
     Header always set X-Content-Type-Options "nosniff"
-
     Header always set Set-Cookie HttpOnly;Secure
-
     Header always set X-FRAME-OPTIONS "DENY"
-
     Header always set X-XSS-Protection "1; mode=block"
-
     Header always set Referrer-Policy "no-referrer"
-
     Header always set Permissions-Policy "microphone=(), camera=(), payment=(), geolocation=(self)"
-
     Header always set Cross-Origin-Opener-Policy "same-origin"
-
     Header always set Strict-Transport-Security "max-age=63072000; includeSubDomains; preload"
-
     Header always set Cross-Origin-Resource-Policy "same-origin"
-
     # Header always set Cross-Origin-Embedder-Policy "require-corp"
 
 </IfModule>
