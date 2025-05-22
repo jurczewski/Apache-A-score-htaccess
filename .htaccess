@@ -23,11 +23,6 @@ RewriteRule ^(.*)index\.php$ /$1 [R=301,L]
 RewriteCond %{REQUEST_FILENAME}.php -f
 RewriteRule ^(.+?)/?$ $1.php [NC,L]
 
-# Front controller fallback - route everything else to index.php
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^(.*)$ index.php [QSA,L]
-
 # SECURITY
 <IfModule mod_headers.c>
     Header set Content-Security-Policy "default-src 'self'; connect-src *; font-src *; frame-src *; img-src * data:; media-src *; object-src *; script-src * 'unsafe-inline' 'unsafe-eval'; style-src * 'unsafe-inline'; script-src-elem * 'unsafe-inline';"
