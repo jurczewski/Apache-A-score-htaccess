@@ -29,8 +29,6 @@ ErrorDocument 404 /404.html
 
     Header always set X-XSS-Protection "1; mode=block"
 
-    Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
-
     Header set Referrer-Policy "no-referrer"
 
     Header set Permissions-Policy: microphone=(), camera=(), payment=(), geolocation=(self)
