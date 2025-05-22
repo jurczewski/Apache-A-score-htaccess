@@ -31,7 +31,7 @@ ErrorDocument 404 /404.html
 
     Header set Referrer-Policy "no-referrer"
 
-    Header set Permissions-Policy: microphone=(), camera=(), payment=(), geolocation=(self)
+    Header set Permissions-Policy: "microphone=(), camera=(), payment=(), geolocation=(self)"
 
     Header set Cross-Origin-Opener-Policy "same-origin"
 
